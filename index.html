@@ -957,8 +957,26 @@
             </div>
           </div>
           <!-- https://www.youtube.com/watch?v=2umsItNQ9mI-->
+          <!-- teoricamente pegando desse jeito, mas uma gambiarra, aproveitando o erro do php-email-form 
+          ta funcionando, só não sei em casos de erro. 
+          Caso de BO ou Dé não goste, fazer puro, seguindo o vídeo, e com os devidos redirects.
+          -->
           <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <!--
+                <form action="https://formsubmit.co/a29451815a3d7fb695d40ab01cc9d1d3" method="POST" class="form">
+              <label for="name">Nome</label>
+              <input type="text" name="name" id="name" required />
+              <label for="email">E-mail</label>
+              <input type="email" name="email" id="email" required />
+              <label for="message">Mensagem</label>
+              <textarea name="message" id="message" required></textarea>
+              <input type="hidden" name="_next" value="http://127.0.0.1:5500/thanks.html" />
+              <button type="submit">Enviar</button>
+            </form>
+
+            -->
+            <form action="https://formsubmit.co/a29451815a3d7fb695d40ab01cc9d1d3" method="post" role="form"
+              class="php-email-form">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
               </div>
@@ -969,8 +987,11 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message"
+                  required></textarea>
               </div>
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="http://127.0.0.1:5500/thanks.html" />
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
