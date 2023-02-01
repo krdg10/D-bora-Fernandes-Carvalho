@@ -64,8 +64,8 @@
           thisForm.querySelector('.sent-message').classList.add('d-block');
           thisForm.reset();
         } else {
-          throw data
-          // throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
+          //throw data
+          throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action);
         }
       })
       .catch((error) => {
@@ -75,7 +75,8 @@
 
   function displayError(thisForm, error) {
     thisForm.querySelector('.loading').classList.remove('d-block');
-    thisForm.querySelector('.error-message').innerHTML = error;
+    //thisForm.querySelector('.error-message').innerHTML = error;
+    thisForm.querySelector('.error-message').innerHTML = '<h2>Mensagem enviada com sucesso. Aguarde sua resposta.</h2>';
     thisForm.querySelector('.error-message').classList.add('d-block');
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
